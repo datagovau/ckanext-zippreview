@@ -1,0 +1,49 @@
+{% extends 'dataviewer/base.html' %}
+
+{% block page %}
+<div class="homepage layout-3 zip-preview">
+  <a name="main_content" id="main_content" tabindex="-1"></a>
+  <div role="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Snippet home/snippets/promoted.html start -->
+          {% set tree = h.get_zip_tree(resource) %}
+
+          {% if not tree %}
+            <p>Sorry, an error occurred and we are unable to display the files inside this archive.</p>
+          {% else %}
+
+            <div class="module-content box">
+              <ul class="ziptree">
+
+                {% for item in tree recursive %}
+                  <li class="tree-item">
+                    <i class="fa fa-{{ item['icon'] }}"></i>
+                    {{ item["title"] }}
+
+                    {% if "file_size" in item %}
+                      <small>({{item["file_size"]}})</small>
+                    {% endif %}
+
+                    {% if item["children"] -%}
+                      <ul class="subtree">{{ loop(item["children"]) }}</ul>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+
+              </ul>
+            </div>
+
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+  {{ super() }}
+  {% asset 'ckanext-zippreview/zip_css' %}
+{% endblock %}

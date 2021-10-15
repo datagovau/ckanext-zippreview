@@ -1,0 +1,9 @@
+zip_css:
+  output: ckanext-zippreview/%(version)s_zip.css
+  extra:
+    preload:
+      - base/main
+  filters: cssrewrite
+  contents:
+    - styles/main.css
+

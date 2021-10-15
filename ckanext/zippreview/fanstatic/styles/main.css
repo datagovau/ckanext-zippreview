@@ -1,0 +1,38 @@
+.zip-preview .box {
+    background-color  : #fff;
+    border            : 1px solid #ccc;
+    border-radius     : 4px;
+    -webkit-box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+    box-shadow        : 0 0 0 4px rgba(0, 0, 0, 0.05);
+    padding           : 30px;
+}
+
+.zip-preview .ziptree {
+    list-style  : none;
+    padding-left: 15px;
+    margin      : 0;
+}
+
+.zip-preview .ziptree .tree-item {
+    list-style    : none;
+    word-break    : break-all;
+    -ms-word-break: break-all;
+    margin        : 3px 0px;
+    font-family   : Arial, sans-serif;
+}
+
+.zip-preview .module-content.box {
+    column-count        : 2;
+    -webkit-column-count: 2;
+    -moz-column-count   : 2;
+
+    column-gap        : 0px;
+    -webkit-column-gap: 0px;
+    -moz-column-gap   : 0px;
+
+    padding-left: 15px;
+}
+
+body {
+    background: none;
+}
