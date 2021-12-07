@@ -30,7 +30,7 @@ pipeline {
 
             steps {
                 dir('dga-ckan_web') {
-                    git branch: 'ExternalResources', credentialsId: 'PAT', url: 'https://github.com/datagovau/dga-ckan_web.git'
+                    git branch: 'Develop', credentialsId: 'PAT', url: 'https://github.com/datagovau/dga-ckan_web.git'
                 }
 
                 withCredentials([sshUserPrivateKey(credentialsId: "GitHub-ssh", keyFileVariable: 'keyfile')]) {
@@ -196,7 +196,7 @@ pipeline {
 
                         rm -rf dga-ckan_web
                         git clone git@github.com:datagovau/dga-ckan_web.git
-                        git checkout ExternalResources
+                        
                         cd dga-ckan_web
                         tmpCKANEXT=$(mktemp /tmp/ckanext_XXXXXX.json)
 
