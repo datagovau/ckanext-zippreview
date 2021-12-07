@@ -206,6 +206,7 @@ pipeline {
                         mv ${tmpCKANEXT} ckanext.json
 
                         git add . 
+                        set +e
                         git commit -m "Commit ID from ${JOB_NAME}"
                         git push 
 
