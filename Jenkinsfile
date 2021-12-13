@@ -90,10 +90,10 @@ pipeline {
 
                     steps {
                         dir('dga-ckan_web') {
-                            git branch: 'Develop', credentialsId: 'PAT', url: 'https://github.com/datagovau/dga-ckan_web.git'
+                            git branch: 'Develop', credentialsId: 'PAT', url: 'https://github.com/DataGovAU/dga-ckan_web.git'
                         }
                         dir('dga-selenium-tests') {
-                            git branch: 'Develop', url: 'https://github.com/AusDTO/dga-selenium-tests.git'
+                            git branch: 'Develop', url: 'https://github.com/DataGovAU/dga-selenium-tests.git'
                         }
                         sh '''\
                             #!/bin/bash
@@ -135,7 +135,7 @@ pipeline {
                             git branch: 'Develop', credentialsId: 'PAT', url: 'https://github.com/datagovau/dga-ckan_web.git'
                         }
                         dir('dga-selenium-tests') {
-                            git branch: 'Develop', url: 'https://github.com/AusDTO/dga-selenium-tests.git'
+                            git branch: 'Develop', url: 'https://github.com/DataGovAU/dga-selenium-tests.git'
                         }
                         sh '''\
                             #!/bin/bash
