@@ -3,7 +3,6 @@ zip_css:
   extra:
     preload:
       - base/main
-  filters: cssrewrite
   contents:
     - styles/main.css
 
